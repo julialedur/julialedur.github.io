@@ -61,8 +61,6 @@ sub-font
     margin-top: 1rem;
     font-weight: 800;
     letter-spacing: -1.5px;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .body-text {
