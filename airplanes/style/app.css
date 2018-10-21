@@ -17,7 +17,7 @@ body {
 }
 
 .container {
-        max-width: 975px;
+    max-width: 975px;
 }
 
 /* ******** */
@@ -46,10 +46,10 @@ sub-font
 
 
 .super-font {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 .sub-font {
-    font-family: 'Lora', serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 
