@@ -1,0 +1,206 @@
+
+
+body {
+    padding-top:60px;
+    margin: auto;
+}
+
+
+/* choose a light or dark theme to add to the body tag. */
+.dark-theme {
+    background-color: #2e112d;
+    color: #ffdbc5;   
+}
+.light-theme {
+    background-color: #ffffff;
+    color: #364968;    
+}
+
+.container {
+        max-width: 975px;
+}
+
+/* ******** */
+
+.image {
+    width: 100%;
+}
+
+
+
+/*
+super-font
+.headline
+.kicker
+.subhead
+.label
+.label-text
+.credit
+
+sub-font
+.date
+.body-text
+.note
+*/
+
+
+
+.super-font {
+    font-family: 'Merriweather', serif;
+}
+.sub-font {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+.headline {
+    font-size: 4.5rem;
+    line-height: 1.0;
+    margin-bottom: 0.25rem;
+    margin-top: 1rem;
+    letter-spacing: -1.5px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-align: center;
+    text-anchor: middle;
+    color: #364968;
+}
+
+.main-subhead {
+    font-size: 1.3rem;
+    line-height: 1.0;
+    margin-bottom: 0.25rem;
+    margin-top: 1rem;
+    line-height: 1.2;
+    font-weight: 300;
+    text-align: center;
+    text-anchor: middle;
+    color: #364968;
+
+}
+
+
+.body-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 1.5rem;
+
+}
+
+.kicker {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    text-anchor: middle;
+}
+
+.credit  {
+    font-size: 1.1rem;
+    line-height: 0.75;
+    margin-top: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    text-anchor: middle;
+}
+
+.date {
+    font-size: 1rem;
+    line-height: 1;
+    margin-top: 0.25;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+    text-anchor: middle;
+}
+
+.subhead {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 0rem;
+    margin-top: 1.5rem;
+    font-weight: 900;
+    color: #364968;
+    text-align: center;
+    text-anchor: middle;
+}
+
+.label {
+    font-size: 1.25rem;
+    line-height: 1.25;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.label-text {
+    font-size: 1.25rem;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.note {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    font-weight: 400;
+}
+.caption  {
+    font-size: 1rem;
+    line-height: 1.2;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+
+.image {
+    margin-top: 40px;
+}
+
+.a {
+    text-decoration: none;
+    border-bottom: 0.1rem solid currentColor;
+    color: inherit;
+    -webkit-transition: color 0.4s, text-shadow 0.4s;
+    transition: color 0.4s, text-shadow 0.4s;
+  }
+
+.a hover {
+    color: #ffc099;
+    text-shadow: 0 0 0.8rem #ffc099;
+  }
+
+::selection {
+    text-shadow: 0 0 0.8rem #ffc099;
+    background: #ffc099;
+    color: #5D608E;
+  }
+
+/* unvisited link */
+a:link {
+    color: #FD5F00;
+}
+
+/* visited link */
+a:visited {
+    color: #83606C;
+}
+
+/* mouse over link */
+a:hover {
+    color: #5D608E;
+}
+
+
+
+
+
+
