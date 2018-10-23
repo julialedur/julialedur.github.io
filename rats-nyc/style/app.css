@@ -27,6 +27,38 @@ body {
 }
 
 
+a:link {
+    color: #336F81;
+}
+
+/* visited link */
+a:visited {
+    color: #EB6D7B;
+}
+
+/* mouse over link */
+a:hover {
+    color: #8CC6C3;
+}
+
+.a {
+    text-decoration: none;
+    border-bottom: 0.1rem solid currentColor;
+    color: inherit;
+    -webkit-transition: color 0.4s, text-shadow 0.4s;
+    transition: color 0.4s, text-shadow 0.4s;
+  }
+
+.a hover {
+    color: #DAA646;
+    text-shadow: 0 0 0.8rem #DAA646;
+  }
+
+::selection {
+    text-shadow: 0 0 0.8rem #DAA646;
+    background: #DAA646;
+    color: #632667;
+  }
 
 /*
 super-font
@@ -55,19 +87,16 @@ sub-font
 
 
 .headline {
-    font-size: 3.5rem;
+    font-size: 3.3rem;
     line-height: 1.0;
     margin-bottom: 0.25rem;
     margin-top: 1rem;
     font-weight: 800;
     letter-spacing: -1.5px;
-    width: 600px;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .body-text {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     line-height: 1.6;
     margin-top: 1.5rem;
 
@@ -117,8 +146,8 @@ sub-font
 
 .label-text {
     font-size: 1.25rem;
-    line-height: 1.25;
-    margin-bottom: 0.5rem;
+    line-height: 1;
+    margin-bottom: 0rem;
     font-weight: 400;
 }
 
