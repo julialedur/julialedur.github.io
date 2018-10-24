@@ -27,26 +27,29 @@
         right: 0;
         background: rgba(255, 255, 255, 0.8);
         margin-right: 20px;
-        font-family: Arial, sans-serif;
+        font-family: 'Source Sans Pro', sans-serif;
         overflow: auto;
         border-radius: 3px;
       }
 
       #legend {
-        padding: 10px;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
         line-height: 18px;
         height: 60px;
         margin-bottom: 40px;
         width: 120px;
         z-index:1;
+        font: 400 16px 'Helvetica Neue', Sans-serif;
+        text-anchor: middle;
       }
 
       .legend-key {
+        font-family: 'Source Sans Pro', sans-serif;
         display: inline-block;
-        border-radius: 20%;
-        width: 10px;
-        height: 10px;
+        border-radius: 80%;
+        width: 11px;
+        height: 11px;
         margin-right: 5px;
       }
 
@@ -144,7 +147,7 @@
             coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
         }
         // .setLngLat(_map.unproject(e.point))
-        console.log(e.features[0].properties)
+        // console.log(e.features[0].properties)
         popup.setLngLat(coordinates)
                             .setHTML(                         
                                 "<b>" + e.features[0].properties.Address + "</b></li>" +
@@ -153,7 +156,7 @@
                                 )
           .addTo(_map);
       
-      console.log(popup)
+      //console.log(popup)
 
 
       });
@@ -171,7 +174,7 @@
       init ();
       _map.addControl (new mapboxgl.NavigationControl ());
 
-    var layers = ['Residential', 'Commercial', 'Industrial'];
+    var layers = [' Residential', ' Commercial', ' Industrial'];
       var colors = ['#a50f15', '#facf5a', '#0c317a'];
 
     for (i = 0; i < layers.length; i++) {
