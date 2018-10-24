@@ -10,15 +10,46 @@
   <style>
     body { margin:0; padding:0; }
     #map { position:absolute; top:0; bottom:0; width:100%; }
-    .mapboxgl-popup-content {
-      font: 300 13px/14px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
-      padding-left: 25px;
-      padding-top: 15px;
-      padding-bottom: 15px;
-      width: 150px;
-      border-style:initial;
-      line-height: 1.3em;
-}
+
+      .mapboxgl-popup-content {
+        font: 300 13px/14px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+        padding-left: 25px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        width: 150px;
+        border-style:initial;
+        line-height: 1.3em;
+      }
+
+      .map-overlay {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.8);
+        margin-right: 20px;
+        font-family: Arial, sans-serif;
+        overflow: auto;
+        border-radius: 3px;
+      }
+
+      #legend {
+        padding: 10px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        line-height: 18px;
+        height: 60px;
+        margin-bottom: 40px;
+        width: 120px;
+        z-index:1;
+      }
+
+      .legend-key {
+        display: inline-block;
+        border-radius: 20%;
+        width: 10px;
+        height: 10px;
+        margin-right: 5px;
+      }
+
 
 </style>
 </head>
@@ -26,6 +57,8 @@
 <body>
 
 <div id="map"></div>
+<div class='map-overlay' id='legend'></div>
+
   <script>
     var _map         = null,
         _centerLat   = 44.976665,
@@ -39,7 +72,7 @@
                                container: "map",
                                style: _mapStyle,
                                center: [_centerLng, _centerLat],
-                               zoom: 11.25
+                               zoom: 11
     });
 
     function init ()
@@ -73,8 +106,8 @@
                         ["Vacant Land - Apartment", "#a50f15"],   
                         ["Vacant Land - Commercial", "#facf5a"],                       
                         ["Commercial", "#facf5a"],
-                        ["Industrial", "#0c317a"]
-                  ]  
+                        ["Industrial", "#0c317a"]                  
+                  ]                    
                   },
                   "circle-radius": 
                   {
@@ -88,21 +121,19 @@
                         [900000, 11],
                         [1100000, 13]
                     ]
-                    },
-                
-                   "circle-stroke-width": 0,
-                  //  "circle-opacity": 0.5
+                    },                   
+                    "circle-stroke-width": 0
                  }
+                
          });
 
-      var popup = new mapboxgl.Popup({
+  var popup = new mapboxgl.Popup({
         closeButton: false,
         closeOnClick: false,
       });
 
-      
-     _map.on('mouseenter', 'markers', function(e) {
-        _map.getCanvas().style.cursor = 'pointer';
+    _map.on("mouseenter", "markers", function(e) {
+      _map.getCanvas().style.cursor = 'pointer';
 
         var coordinates = e.features[0].geometry.coordinates.slice();
         var description = e.features[0].properties.description;
@@ -115,50 +146,51 @@
         // .setLngLat(_map.unproject(e.point))
         console.log(e.features[0].properties)
         popup.setLngLat(coordinates)
-          .setHTML(
-                                
+                            .setHTML(                         
                                 "<b>" + e.features[0].properties.Address + "</b></li>" +
                                 "<br>Property type: <b>" + e.features[0].properties.PropType + "</b>" +
                                 "<br>Sale price: <b>" + "$" + e.features[0].properties.AdjustedSa.toLocaleString() + "</b>" 
                                 )
           .addTo(_map);
+      
+      console.log(popup)
+
+
       });
 
-      _map.on('mouseout', 'markers', function() {
+       _map.on('mouseout', 'markers', function() {
         _map.getCanvas().style.cursor = '';
         popup.remove();
     });
+
     }
+
 
     _map.once ("style.load", function (e)
     {
       init ();
       _map.addControl (new mapboxgl.NavigationControl ());
-    });
 
-    _map.on('load', function() {
-      var layers = ['Residential', 'Commercial', 'Industrial'];
+    var layers = ['Residential', 'Commercial', 'Industrial'];
       var colors = ['#a50f15', '#facf5a', '#0c317a'];
 
-      for (i = 0; i < layers.length; i++) {
-        var layer = layers[i];
-        var color = colors[i];
-        var item = document.createElement('div');
-        var key = document.createElement('span');
-        key.className = 'legend-key';
-        key.style.backgroundColor = color;
+    for (i = 0; i < layers.length; i++) {
+      var layer = layers[i];
+      var color = colors[i];
+      var item = document.createElement('div');
+      var key = document.createElement('span');
+      key.className = 'legend-key';
+      key.style.backgroundColor = color;
 
-        var value = document.createElement('span');
-        value.innerHTML = layer;
-        item.appendChild(key);
-        item.appendChild(value);
-        legend.appendChild(item);
+      var value = document.createElement('span');
+      value.innerHTML = layer;
+      item.appendChild(key);
+      item.appendChild(value);
+      legend.appendChild(item);
     }
 
-});
-    
+    });
+
   </script>
   </body>
 </html>
-
-
