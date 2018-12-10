@@ -248,7 +248,7 @@ a:hover {
 
 .bottom-right {
     position: absolute;
-    bottom: 8px;
+    bottom: 5px;
     right: 16px;
     color: lightgrey;
     font-family: 'Roboto', sans-serif;
