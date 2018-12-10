@@ -245,3 +245,46 @@ a:hover {
     font-size: 50px;
     font-weight: 700;
   }
+
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    color: lightgrey;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+  }
+
+  /* unvisited link */
+a:link {
+    color: #a85652;
+}
+
+/* visited link */
+a:visited {
+    color: #a85652;
+}
+
+/* mouse over link */
+a:hover {
+    color: #67919b;
+}
+
+.a {
+    text-decoration: none;
+    border-bottom: 0.1rem solid currentColor;
+    color: inherit;
+    -webkit-transition: color 0.4s, text-shadow 0.4s;
+    transition: color 0.4s, text-shadow 0.4s;
+  }
+
+.a hover {
+    color: #c69491;
+    text-shadow: 0 0 0.8rem #c69491;
+  }
+
+::selection {
+    text-shadow: 0 0 0.8rem #c69491;
+    background: #dbb4b2;
+    color: black;
+  }
