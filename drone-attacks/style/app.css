@@ -238,12 +238,14 @@ a:hover {
 
 .top-left {
     position: absolute;
-    top: 200px;
+    top: 130px;
     left: 180px;
+    /* transform: translate( -50%, -50% ); */
     font-family: 'Crimson Text', serif;
     letter-spacing: 0.5cm;
     font-size: 50px;
     font-weight: 700;
+    text-align: center;
   }
 
 .bottom-right {
