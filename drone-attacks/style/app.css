@@ -238,11 +238,11 @@ a:hover {
 
 .top-left {
     position: absolute;
-    top: 130px;
-    left: 180px;
+    top: 8%;
+    left: 10%;
     /* transform: translate( -50%, -50% ); */
     font-family: 'Crimson Text', serif;
-    letter-spacing: 0.5cm;
+    letter-spacing: 0.8cm;
     font-size: 50px;
     font-weight: 700;
     text-align: center;
@@ -250,8 +250,8 @@ a:hover {
 
 .bottom-right {
     position: absolute;
-    bottom: 5px;
-    right: 16px;
+    bottom: 1%;
+    right: 0%;
     color: lightgrey;
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
@@ -290,3 +290,4 @@ a:hover {
     background: #dbb4b2;
     color: black;
   }
+
